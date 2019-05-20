@@ -1,0 +1,51 @@
+git config --global user.name “注册的名字”
+git config --global user.email “注册的邮箱”
+
+//生成key
+ssh-keygen -t rsa -C "注册的邮箱"
+
+//进入目录
+cd ~/.ssh
+
+//打开key文件
+cat id_rsa.pub
+
+复制显示的内容 到http://git.shylsoft.com设置ssh  在右上角“用户设置”里面的“SSH密钥” ，点增加密钥，粘贴到密钥内容上
+
+进入你放代码的目录再检出仓库 
+//检出仓库 
+git clone ssh://git@git.shylsoft.com:10022/QHX/zhiyun_iOS.git
+
+
+
+进入到祉云的代码目录做以下操作：
+//更新代码
+git pull
+//查看自己修改 
+Git status
+//添加上去
+git add .
+//上传到本地库
+git commit -m "kkk"
+//上传服务器
+Git push
+
+git pull
+
+Add .
+Commit 
+git stash
+Git pull
+
+Git stash pop
+
+
+
+git stash apply	//导出工作台的
+
+
+目录  ~/.ssh打开known_hosts文件，删除啊顶部路径地址，保留[git.shylsoft.com]:ssh-rsa
+
+
+
+

@@ -1,0 +1,88 @@
+
+git init //初始化
+rm -rf .git //删除git
+rm -rf .gitignore  //删除git
+
+/*
+给本地文件添加远程库
+*/
+git remote add origin xxx.xxx.com
+
+git pull origin master --allow-unrelated-histories // 把本地库的所有内容推送到远程库上
+
+git push -u origin master
+
+
+git log
+
+git log --pretty=oneline //缩略形式显示
+
+git reflog //查看git命令日志
+
+git log --graph --pretty=oneline --abbrev-commit  //以缩略图形式显示log
+
+
+git reset --hard HEAD^ //回退到上一个版本 ^表示一个版本，多了可以用HEAD~10表示
+
+git reset --hard xxx   //退回到指定版本
+
+
+
+git diff HEAD -- README.md //查看修改的内容
+
+git checkout -- file //丢弃工作区修改，等同于 dismissChangned
+
+git checkout -- xxx.xx  //将文件导出
+
+git branch //查看当前分支
+
+git branch xx //创建某个分支
+
+git branch -d xx  //删除某个分支，当分支内容未合并时候，删除会警告，这时候用大写的-D来删除
+
+git checkout xx   //切换到某个分支
+
+git checkout -b xx  //创建并切换到创建的分支
+
+git merge xxx //将某个分支内容合并到当前分支
+
+
+
+git stash //将当前修改的储藏起来，储藏以后本地工作台跟踪的文件没有修改内容了
+
+git stash list //查看存储的内容
+
+git stash apply //取出最近存储的内容
+
+git stash apply stash@{xx} //取出指定村粗的内容
+
+git stash drop  //删除stash记录
+
+git stash pop //取出并删除记录
+
+
+git remove  //查看远程库信息 
+
+git remove -v //查看详细信息 fetch表示拉取的地址，push表示推送地址，没有推送权限就不会有push地址
+
+
+
+git tag xx //创建一个标签，默认是创建在最新的commit上
+
+git tag -d xx //删除一个标签
+
+git tag xx log号  //给指定的log打个标签
+
+git tag -a xx -m "aa" bb //-a指定标签名，-m指定说明文字：
+//例如  git tag -a v0.1 -m "version 0.1 released" 1094adb
+
+git show xx //显示某个标签
+
+git push  origin xx   //将某个tag标签推送上去
+
+git push origin --tags //将所有tag都推送远程
+
+git push origin :refs/tags/xx  //将服务器上某个tag删除
+
+
+git config --global alias.st  status   //表示将status设置快捷写法st，其他快捷方式同样设置
